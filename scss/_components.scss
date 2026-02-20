@@ -1,0 +1,342 @@
+@use "variables" as *;
+@use "mixins" as *;
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: rgba($surface, 0.92);
+  backdrop-filter: blur(6px);
+  border-bottom: 1px solid $line;
+}
+
+.header__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 0;
+  gap: $sp-4;
+}
+
+.brand {
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  text-decoration: none;
+  font-size: 22px;
+
+  &:hover { color: $text; }
+}
+
+.nav__list {
+  display: flex;
+  gap: 18px;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.nav__link {
+  text-decoration: none;
+  color: $muted;
+  padding: 8px 10px;
+  border-radius: 10px;
+
+  &:hover { color: $text; background: $surface-2; }
+  &:active { transform: translateY(1px); }
+  &:focus-visible { @include focus-ring; }
+}
+
+/* :target — подсветка раздела при переходе по якорю */
+section:target {
+  scroll-margin-top: 84px;
+  outline: 2px dashed rgba($accent, 0.35);
+  outline-offset: 6px;
+  border-radius: $radius;
+}
+
+.hero__inner {
+  display: grid;
+  grid-template-columns: 1.4fr 0.6fr;
+  gap: $sp-5;
+  align-items: start;
+}
+
+.hero__title {
+  margin: 0 0 $sp-2;
+  font-size: 44px;
+  line-height: 1.12;
+  letter-spacing: -0.03em;
+}
+
+.hero__subtitle {
+  margin: 0 0 $sp-4;
+  color: $muted;
+  font-size: 18px;
+}
+
+.hero__actions {
+  display: flex;
+  gap: $sp-3;
+  flex-wrap: wrap;
+  margin-bottom: $sp-3;
+}
+
+.hero__note { margin: 0; color: $muted; }
+
+.hero__box {
+  background: $surface;
+  border: 1px solid $line;
+  border-radius: $radius;
+  padding: $sp-4;
+  box-shadow: $shadow;
+}
+
+.hero__box-title {
+  margin: 0 0 $sp-3;
+  font-size: 18px;
+}
+
+.btn {
+  @include button-base;
+
+  &--primary {
+    background: $accent;
+    color: #fff;
+
+    &:hover { background: $accent-2; color: #fff; }
+    &:active { transform: translateY(1px); }
+    &:focus-visible { @include focus-ring; }
+  }
+
+  &--ghost {
+    background: $surface;
+    border-color: $line;
+
+    &:hover { background: $surface-2; }
+    &:active { transform: translateY(1px); }
+    &:focus-visible { @include focus-ring; }
+  }
+}
+
+.card {
+  background: $surface;
+  border: 1px solid $line;
+  border-radius: $radius;
+  padding: $sp-4;
+  box-shadow: 0 1px 0 rgba(0,0,0,.02);
+  position: relative;
+
+  /* псевдоэлемент — маленький “акцент” сверху */
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0 0 auto 0;
+    height: 3px;
+    background: rgba($accent, 0.6);
+    border-top-left-radius: $radius;
+    border-top-right-radius: $radius;
+  }
+
+  &--note::before { background: rgba($accent-2, 0.65); }
+}
+
+.card__title {
+  margin: 0 0 $sp-2;
+  font-size: 18px;
+}
+
+.card__text {
+  margin: 0;
+  color: $muted;
+}
+
+.project {
+  background: $surface;
+  border: 1px solid $line;
+  border-radius: $radius;
+  padding: $sp-4;
+  box-shadow: $shadow;
+}
+
+.project__head {
+  margin-bottom: $sp-3;
+}
+
+.project__title {
+  margin: 0 0 $sp-1;
+  font-size: 20px;
+}
+
+.project__meta {
+  margin: 0;
+  color: $muted;
+}
+
+.project__media {
+  margin: 0 0 $sp-3;
+  border: 1px solid $line;
+  border-radius: $radius-sm;
+  overflow: hidden;
+  background: #fff;
+
+  figcaption {
+    padding: 10px 12px;
+    border-top: 1px solid $line;
+    color: $muted;
+    font-size: 14px;
+  }
+}
+
+.project__text { margin: 0; }
+
+.bullet {
+  margin: 0;
+  padding-left: 18px;
+
+  li + li { margin-top: 6px; }
+}
+
+/* steps с counter + ::before */
+.steps {
+  margin: 0 0 $sp-4;
+  padding: 0;
+  list-style: none;
+  counter-reset: step;
+
+  li {
+    counter-increment: step;
+    background: $surface;
+    border: 1px solid $line;
+    border-radius: $radius-sm;
+    padding: 12px 12px 12px 44px;
+    position: relative;
+
+    &::before {
+      content: counter(step);
+      position: absolute;
+      left: 12px;
+      top: 10px;
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: rgba($accent, 0.14);
+      color: $accent-2;
+      font-weight: 700;
+    }
+  }
+
+  li + li { margin-top: 10px; }
+}
+
+/* details/summary — псевдоклассы и атрибут [open] */
+.details {
+  background: $surface;
+  border: 1px solid $line;
+  border-radius: $radius;
+  padding: 10px 12px;
+
+  summary {
+    cursor: pointer;
+    font-weight: 700;
+    list-style: none;
+
+    &::-webkit-details-marker { display: none; }
+
+    &::before {
+      content: "▸";
+      display: inline-block;
+      margin-right: 8px;
+      transform: translateY(-1px);
+      color: $muted;
+    }
+
+    &:hover { color: $accent-2; }
+    &:focus-visible { @include focus-ring; }
+  }
+
+  &[open] summary::before { content: "▾"; }
+
+  p { margin: 10px 0 0; color: $muted; }
+  ul { margin-top: 10px; }
+}
+
+.contact-box {
+  background: $surface;
+  border: 1px solid $line;
+  border-radius: $radius;
+  padding: $sp-4;
+  box-shadow: $shadow;
+}
+
+.contact-box__title {
+  margin: 0 0 $sp-3;
+  font-size: 18px;
+}
+
+.form { display: grid; gap: $sp-3; }
+
+.field {
+  display: grid;
+  gap: 6px;
+}
+
+.field__label { color: $muted; font-size: 14px; }
+
+.field__control {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 12px;
+  border: 1px solid $line;
+  background: #fff;
+  font: inherit;
+
+  &:focus-visible { @include focus-ring; }
+}
+
+.address {
+  background: $surface;
+  border: 1px solid $line;
+  border-radius: $radius;
+  padding: $sp-4;
+}
+
+.address a[href^="tel"] { font-weight: 700; }
+.address a[href^="mailto"] { text-decoration-style: dotted; }
+
+.mini {
+  background: $surface;
+  border: 1px solid $line;
+  border-radius: $radius;
+  padding: $sp-4;
+}
+
+.mini__title { margin: 0 0 $sp-2; font-weight: 800; }
+.mini__links { margin: 0; padding-left: 18px; }
+
+.site-footer {
+  border-top: 1px solid $line;
+  background: rgba($surface, 0.85);
+}
+
+.footer__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 0;
+  gap: $sp-4;
+}
+
+.to-top {
+  text-decoration: none;
+  color: $muted;
+
+  &:hover { color: $text; }
+  &:focus-visible { @include focus-ring; }
+}
+
+@include respond($bp-md) {
+  .hero__inner { grid-template-columns: 1fr; }
+  .hero__title { font-size: 38px; }
+}

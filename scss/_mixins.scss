@@ -1,0 +1,25 @@
+@use "variables" as *;
+
+@mixin respond($bp) {
+  @media (max-width: $bp) { @content; }
+}
+
+@mixin focus-ring {
+  outline: 3px solid rgba($accent, 0.35);
+  outline-offset: 2px;
+}
+
+@mixin button-base {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 14px;
+  border-radius: 12px;
+  border: 1px solid transparent;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  user-select: none;
+  transition: transform .06s ease, background-color .15s ease, border-color .15s ease, color .15s ease;
+}

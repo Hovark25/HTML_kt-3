@@ -1,0 +1,42 @@
+@use "variables" as *;
+@use "mixins" as *;
+
+* { box-sizing: border-box; }
+html, body { height: 100%; }
+
+body {
+  margin: 0;
+  font-family: $font;
+  color: $text;
+  background: $bg;
+  line-height: 1.5;
+}
+
+img { max-width: 100%; display: block; }
+
+a {
+  color: inherit;
+  text-underline-offset: 3px;
+
+  &:hover { color: $accent-2; }
+  &:focus-visible { @include focus-ring; }
+}
+
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 10px;
+  padding: 10px 12px;
+  background: $surface;
+  border: 1px solid $line;
+  border-radius: 10px;
+  box-shadow: $shadow;
+
+  &:focus { left: 10px; }
+}
+
+mark {
+  background: rgba($accent, 0.14);
+  padding: 0 6px;
+  border-radius: 6px;
+}

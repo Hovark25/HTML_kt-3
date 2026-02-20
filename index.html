@@ -1,0 +1,284 @@
+<!doctype html>
+<html lang="ru" id="top">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Construction of houses — строительство домов</title>
+  <meta name="description" content="Адаптивный лендинг: услуги, проекты, этапы, FAQ и контакты." />
+
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body class="page">
+  <a class="skip-link" href="#content">Перейти к содержимому</a>
+
+  <header class="site-header">
+    <div class="container header__inner">
+      <a class="brand" href="#top" aria-label="На главную">Construction of houses</a>
+
+      <!-- Бургер без JS: checkbox + label -->
+      <input class="nav-toggle" type="checkbox" id="nav-toggle" aria-label="Открыть меню" />
+      <label class="burger" for="nav-toggle" aria-hidden="true">
+        <span></span>
+        <span></span>
+        <span></span>
+      </label>
+
+      <nav class="nav" aria-label="Основная навигация">
+        <ul class="nav__list">
+          <li><a class="nav__link" href="#services">Услуги</a></li>
+          <li><a class="nav__link" href="#projects">Проекты</a></li>
+          <li><a class="nav__link" href="#process">Этапы</a></li>
+          <li><a class="nav__link" href="#faq">Вопросы</a></li>
+          <li><a class="nav__link" href="#contacts">Контакты</a></li>
+          <li><a class="nav__link nav__link--cta" href="#contacts">Заявка</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="content" class="main">
+    <section class="hero section" aria-labelledby="hero-title">
+      <div class="container hero__inner">
+        <div class="hero__text">
+          <h1 id="hero-title" class="hero__title">Строительство домов под ключ</h1>
+          <p class="hero__subtitle">Смета, понятные этапы и контроль качества. Москва и МО.</p>
+
+          <div class="hero__actions">
+            <a class="btn btn--primary" href="#contacts">Оставить заявку</a>
+            <a class="btn btn--ghost" href="#projects">Смотреть проекты</a>
+          </div>
+
+          <p class="hero__note"><mark>Консультация</mark> — по договорённости.</p>
+        </div>
+
+        <aside class="hero__box" aria-label="Кратко">
+          <h2 class="hero__box-title">Коротко</h2>
+          <ul class="bullet">
+            <li>Фиксируем смету</li>
+            <li>Фото/видео этапов</li>
+            <li>Сдача по актам</li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+
+    <section id="services" class="section" aria-labelledby="services-title">
+      <div class="container">
+        <header class="section__header">
+          <h2 id="services-title" class="section__title">Услуги</h2>
+          <p class="section__desc">Можно начать с холодного контура или сделать всё под ключ.</p>
+        </header>
+
+        <div class="grid grid--4">
+          <article class="card">
+            <h3 class="card__title">Коробка дома</h3>
+            <p class="card__text">Фундамент, стены, перекрытия.</p>
+          </article>
+
+          <article class="card">
+            <h3 class="card__title">Кровля</h3>
+            <p class="card__text">Стропила, утепление, покрытие, водостоки.</p>
+          </article>
+
+          <article class="card">
+            <h3 class="card__title">Инженерия</h3>
+            <p class="card__text">Электрика, вода, канализация — по ТЗ.</p>
+          </article>
+
+          <article class="card card--note">
+            <h3 class="card__title">Важно</h3>
+            <p class="card__text">Цена зависит от участка, геологии и проекта.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" class="section section--alt" aria-labelledby="projects-title">
+      <div class="container">
+        <header class="section__header">
+          <h2 id="projects-title" class="section__title">Проекты</h2>
+          <p class="section__desc">Примеры объектов и типовых решений.</p>
+        </header>
+
+        <div class="grid grid--2">
+          <article class="project" aria-labelledby="p1-title">
+            <header class="project__head">
+              <h3 id="p1-title" class="project__title">Проект “Сканди-120”</h3>
+              <p class="project__meta">
+                Срок: <time datetime="2025-05">май 2025</time> — <time datetime="2025-08">август 2025</time>
+              </p>
+            </header>
+
+            <!-- Responsive image (если у тебя только jpg — просто оставь src=house-1.jpg) -->
+            <figure class="project__media">
+              <img
+                src="assets/house-1.jpg"
+                srcset="assets/house-1.jpg 900w"
+                sizes="(max-width: 680px) 100vw, (max-width: 980px) 50vw, 520px"
+                alt="Проект Сканди-120"
+                loading="lazy"
+                decoding="async"
+              />
+              <figcaption>Коробка + кровля. Площадь: 120 м².</figcaption>
+            </figure>
+
+            <p class="project__text">Фундамент, стены, армопояс, перекрытия, стропильная система.</p>
+          </article>
+
+          <article class="project" aria-labelledby="p2-title">
+            <header class="project__head">
+              <h3 id="p2-title" class="project__title">Проект “Классик-160”</h3>
+              <p class="project__meta">Сдача: <time datetime="2025-11-15">15.11.2025</time></p>
+            </header>
+
+            <figure class="project__media">
+              <img
+                src="assets/house-2.jpg"
+                srcset="assets/house-2.jpg 900w"
+                sizes="(max-width: 680px) 100vw, (max-width: 980px) 50vw, 520px"
+                alt="Проект Классик-160"
+                loading="lazy"
+                decoding="async"
+              />
+              <figcaption>Тёплый контур. Площадь: 160 м².</figcaption>
+            </figure>
+
+            <p class="project__text">Планировка + отдельная котельная, соблюдение норм и вентиляции.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="process" class="section" aria-labelledby="process-title">
+      <div class="container">
+        <header class="section__header">
+          <h2 id="process-title" class="section__title">Этапы работ</h2>
+          <p class="section__desc">Гибкая вёрстка на Grid/Flex + медиазапросы.</p>
+        </header>
+
+        <div class="process">
+          <ol class="steps">
+            <li>Сбор ТЗ и анализ участка</li>
+            <li>Смета и договор</li>
+            <li>График поставок и этапов</li>
+            <li>Приёмка работ по актам</li>
+          </ol>
+
+          <div class="process__panel">
+            <h3 class="process__panel-title">Пакеты</h3>
+            <ul class="bullet">
+              <li>Холодный контур</li>
+              <li>Тёплый контур</li>
+              <li>Под ключ</li>
+            </ul>
+
+            <details class="details">
+              <summary>Какие документы выдаём?</summary>
+              <ul class="bullet">
+                <li>Смета с перечнем работ и материалов</li>
+                <li>Фото/видео фиксация этапов</li>
+                <li>Акты выполненных работ</li>
+              </ul>
+            </details>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="faq" class="section section--alt" aria-labelledby="faq-title">
+      <div class="container">
+        <header class="section__header">
+          <h2 id="faq-title" class="section__title">Вопросы</h2>
+        </header>
+
+        <div class="grid grid--2">
+          <div class="faq">
+            <details class="details">
+              <summary>Можно начать с холодного контура?</summary>
+              <p>Да. Обычно это фундамент + коробка + кровля. Дальше — по бюджету и сезону.</p>
+            </details>
+
+            <details class="details">
+              <summary>Работаете по готовому проекту?</summary>
+              <p>Да. Либо адаптируем типовой проект под участок и нормы.</p>
+            </details>
+
+            <details class="details">
+              <summary>Сколько занимает расчёт сметы?</summary>
+              <p>Обычно 1–3 дня после получения ТЗ и данных по участку.</p>
+            </details>
+          </div>
+
+          <aside class="contact-box" aria-label="Форма заявки">
+            <h3 class="contact-box__title">Заявка</h3>
+            <form class="form" action="#" method="post">
+              <label class="field">
+                <span class="field__label">Имя</span>
+                <input class="field__control" name="name" autocomplete="name" required />
+              </label>
+
+              <label class="field">
+                <span class="field__label">Телефон</span>
+                <input class="field__control" name="phone" autocomplete="tel" required />
+              </label>
+
+              <label class="field">
+                <span class="field__label">Комментарий</span>
+                <textarea class="field__control" name="message" rows="4"></textarea>
+              </label>
+
+              <button class="btn btn--primary" type="submit">Отправить</button>
+            </form>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section id="contacts" class="section" aria-labelledby="contacts-title">
+      <div class="container">
+        <header class="section__header">
+          <h2 id="contacts-title" class="section__title">Контакты</h2>
+          <p class="section__desc">Проверь на разных ширинах: меню, сетки и изображения.</p>
+        </header>
+
+        <div class="grid grid--2">
+          <address class="address">
+            <p><strong>Телефон:</strong> <a href="tel:+70000000000">+7 (000) 000-00-00</a></p>
+            <p><strong>Почта:</strong> <a href="mailto:info@example.com">info@example.com</a></p>
+            <p><strong>Регион:</strong> Москва / МО</p>
+          </address>
+
+          <div class="mini">
+            <p class="mini__title">Навигация</p>
+            <ul class="mini__links">
+              <li><a href="#services">Услуги</a></li>
+              <li><a href="#projects">Проекты</a></li>
+              <li><a href="#process">Этапы</a></li>
+              <li><a href="#faq">Вопросы</a></li>
+            </ul>
+
+            <div class="test">
+              <p class="test__title">Тестирование адаптива</p>
+              <ul class="test__list">
+                <li>320px — меню превращается в бургер</li>
+                <li>680px — колонки становятся в 1</li>
+                <li>980px — сетка услуг 2×2</li>
+                <li>Изображения не “ломают” блоки</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer__inner">
+      <p>© <time datetime="2026">2026</time> Construction of houses</p>
+      <a class="to-top" href="#top">Наверх</a>
+    </div>
+  </footer>
+</body>
+</html>
+
